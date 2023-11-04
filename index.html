@@ -4,42 +4,135 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <title>AntSource</title>
-    <script> src="script.js"</script>
 </head>
 
 <body>
-    <h1>AntSource</h1>
-    <p>Are you not sure about where to eat on or nearby UCI? We'll help you find your anthill!</p>
-    
     <section>
-        <h2>Choose which areas you want to eat from: </h2>
-        <form action="">
-            <div>
-                <input type="checkbox" name="on-campus" id="on-campus">
-                <label for="on-campus"> On-Campus Options &lpar;dining halls, food course&rpar; </label>
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <h1>AntSource</h1>                
+                </div>
+                <div class="col">
+                    <a href=""> Input Form </a>
+                </div>
             </div>
-
-            <div>
-                <input type="checkbox" name="" id="utc">
-                <label for="utc"> University Town Center &lpar;UTC&rpar; </label>
-            </div>
-
-            <div>
-                <input type="checkbox" name="campus-plaza" id="campus-plaza">
-                <label for="campus-plaza"> Campus Plaza </label>
-            </div>
-
-            <div>
-                <input type="checkbox" name="off-campus" id="off-campus">
-                <label for="off-campus"> Off-Campus within <input type="text" name="distance" id="miles" value="3"> miles </label>
-            </div>
-
-            <div>
-                <button type="submit" id="search">Tell me where I should eat!</button>
-            </div>
-        </form>
+        </div>
     </section>
+
+    <section>
+        <div class="container text-center mt-5">
+            <div class="row">
+                <div class="col">
+                    <div>
+                        <button type="button" class="btn btn-primary" style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem; border-radius: 10px"> Surprise Me! </button>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="dropdown">
+                        <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" style="border-radius: 10px">
+                          Location
+                        </button>
+                        <ul class="dropdown-menu">
+                          <li><a class="dropdown-item" href="#"> On campus </a></li>
+                          <li><a class="dropdown-item" href="#"> UTC </a></li>
+                          <li><a class="dropdown-item" href="#"> Campus Plaza </a></li>
+                          <li><a class="dropdown-item" href="#"> Nearby campus </a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="dropdown">
+                        <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" style="border-radius: 10px">
+                          Pricing
+                        </button>
+                        <ul class="dropdown-menu">
+                          <li><a class="dropdown-item" href="#"> $ </a></li>
+                          <li><a class="dropdown-item" href="#"> $$ </a></li>
+                          <li><a class="dropdown-item" href="#"> $$$ </a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="dropdown">
+                        <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" style="border-radius: 10px">
+                          Rating
+                        </button>
+                        <ul class="dropdown-menu">
+                          <li><a class="dropdown-item" href="#"> 3 stars </a></li>
+                          <li><a class="dropdown-item" href="#"> 4 stars </a></li>
+                          <li><a class="dropdown-item" href="#"> 5 stars </a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+        
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+
+    </section>
+
+    <section>
+        <div class="container justify-content-center mt-5">
+            <div class="row row-cols-3 row-cols-md-4 g-4">
+                <div class="col mt-5">
+                    <div class="card h-100" style="width: 18rem;  border-radius: 30px">
+                        <img src="..." class="card-img-top" alt="...">
+                        <div class="card-body">
+                          <h5 class="card-title">Title</h5>
+                          <p class="card-rating">Rating</p>
+                          <p class="card-address">Address</p>
+                          <p class="card-price">$$$</p>
+                          <a href="#" class="btn btn-primary">View Map</a>
+                        </div>
+                      </div>
+                </div>
+                <div class="col mt-5">
+                    <div class="card h-100" style="width: 18rem; border-radius: 30px">
+                        <img src="..." class="card-img-top" alt="...">
+                        <div class="card-body">
+                          <h5 class="card-title">Featured</h5>
+                          <p class="card-location">Location</p>
+                          <p class="card-food">Food</p>
+                          <p class="card-description">Description............</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col mt-5">
+                    <div class="card h-100" style="width: 18rem; border-radius: 30px">
+                        <img src="..." class="card-img-top" alt="...">
+                        <div class="card-body">
+                          <h5 class="card-title">Featured</h5>
+                          <p class="card-location">Location</p>
+                          <p class="card-food">Food</p>
+                          <p class="card-description">Description............</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col mt-5">
+                    <div class="card h-100" style="width: 18rem; border-radius: 30px">
+                        <img src="..." class="card-img-top" alt="...">
+                        <div class="card-body">
+                          <h5 class="card-title">Featured</h5>
+                          <p class="card-location">Location</p>
+                          <p class="card-food">Food</p>
+                          <p class="card-description">Description............</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+
+        
+       
+    </section>
+
 </body>
 
 </html>
