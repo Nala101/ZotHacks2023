@@ -1,0 +1,343 @@
+[
+    {
+        "image_url": "",
+        "name": "",
+        "rating": 0.0,
+        "price": "$",
+        "location": {
+            "address1": "",
+            "address2": "",
+            "address3": "",
+            "city": "Irvine",
+            "zip_code": "",
+            "country": "US",
+            "state": "CA"
+        },
+        "display_phone": "",
+        "distance": 0.0
+    },
+
+    {
+        "image_url": "",
+        "name": "Brandywine",
+        "rating": 4.1,
+        "price": "$",
+        "location": {
+            "address1": "557 Peltason Dr",
+            "address2": "E",
+            "address3": "",
+            "city": "Irvine",
+            "zip_code": "92697",
+            "country": "US",
+            "state": "CA"
+        },
+        "display_phone": "",
+        "distance": 0.0
+    },
+
+    {
+        "image_url": "",
+        "name": "Garbonzo Mediterranean Fresh",
+        "rating": 2.7,
+        "price": "$",
+        "location": {
+            "address1": "419 Peltason Dr",
+            "address2": "E",
+            "address3": "Bldg 419 Suite 1350",
+            "city": "Irvine",
+            "zip_code": "92617",
+            "country": "US",
+            "state": "CA"
+        },
+        "display_phone": "",
+        "distance": 0.0
+    },
+    
+    {
+        "image_url": "",
+        "name": "Java City Kiosk",
+        "rating": 4.0,
+        "price": "$",
+        "location": {
+            "address1": "2004 Los Trancos Dr",
+            "address2": "",
+            "address3": "",
+            "city": "Irvine",
+            "zip_code": "92617",
+            "country": "US",
+            "state": "CA"
+        },
+        "display_phone": "(949) 824-5779",
+        "distance": 0.0
+    },
+
+    {
+        "image_url": "",
+        "name": "Med Ed Cafe",
+        "rating": 4.4,
+        "price": "$",
+        "location": {
+            "address1": "1200 A Medical Education Bldg",
+            "address2": "",
+            "address3": "",
+            "city": "Irvine",
+            "zip_code": "92697",
+            "country": "US",
+            "state": "CA"
+        },
+        "display_phone": "",
+        "distance": 0.0
+    },
+
+    {
+        "image_url": "",
+        "name": "Starbucks @ Biological Sciences",
+        "rating": 4.2,
+        "price": "$$",
+        "location": {
+            "address1": "5120 Natural Sciences 2",
+            "address2": "",
+            "address3": "",
+            "city": "Irvine",
+            "zip_code": "92697",
+            "country": "US",
+            "state": "CA"
+        },
+        "display_phone": "",
+        "distance": 0.0
+    },
+    
+    {
+        "image_url": "",
+        "name": "Starbucks @ Paul Merage School of Business",
+        "rating": 4.1,
+        "price": "$$",
+        "location": {
+            "address1": "Paul Merage, School of Business",
+            "address2": "",
+            "address3": "",
+            "city": "Irvine",
+            "zip_code": "92697",
+            "country": "US",
+            "state": "CA"
+        },
+        "display_phone": "",
+        "distance": 0.0
+    },
+
+    {
+        "image_url": "",
+        "name": "The Anteatery",
+        "rating": 4.1,
+        "price": "$",
+        "location": {
+            "address1": "4001 Mesa Rd",
+            "address2": "",
+            "address3": "",
+            "city": "Irvine",
+            "zip_code": "92697",
+            "country": "US",
+            "state": "CA"
+        },
+        "display_phone": "",
+        "distance": 0.0
+    },
+
+    {
+        "image_url": "",
+        "name": "The Green Room",
+        "rating": 4.8,
+        "price": "$",
+        "location": {
+            "address1": "Bldg 712 West Peltason",
+            "address2": "",
+            "address3": "",
+            "city": "Irvine",
+            "zip_code": "92697",
+            "country": "US",
+            "state": "CA"
+        },
+        "display_phone": "",
+        "distance": 0.0
+    },
+
+    {
+        "image_url": "",
+        "name": "Burgers + Fries",
+        "rating": 4.1,
+        "price": "$",
+        "location": {
+            "address1": "Phoenix Food Court",
+            "address2": "",
+            "address3": "",
+            "city": "Irvine",
+            "zip_code": "92697",
+            "country": "US",
+            "state": "CA"
+        },
+        "display_phone": "",
+        "distance": 0.0
+    },
+
+    {
+        "image_url": "",
+        "name": "Greens to Go",
+        "rating": 4.1,
+        "price": "$",
+        "location": {
+            "address1": "Phoenix Food Court",
+            "address2": "",
+            "address3": "",
+            "city": "Irvine",
+            "zip_code": "92697",
+            "country": "US",
+            "state": "CA"
+        },
+        "display_phone": "",
+        "distance": 0.0
+    },
+
+    {
+        "image_url": "",
+        "name": "Enstein Bros Bagels",
+        "rating": 4.1,
+        "price": "$",
+        "location": {
+            "address1": "Phoenix Food Court",
+            "address2": "",
+            "address3": "",
+            "city": "Irvine",
+            "zip_code": "92697",
+            "country": "US",
+            "state": "CA"
+        },
+        "display_phone": "",
+        "distance": 0.0
+    },
+
+    {
+        "image_url": "",
+        "name": "Tortilla Fresca",
+        "rating": 4.1,
+        "price": "$",
+        "location": {
+            "address1": "Phoenix Food Court",
+            "address2": "",
+            "address3": "",
+            "city": "Irvine",
+            "zip_code": "92697",
+            "country": "US",
+            "state": "CA"
+        },
+        "display_phone": "",
+        "distance": 0.0
+    },
+
+    {
+        "image_url": "",
+        "name": "Bento Sushi",
+        "rating": 2.7,
+        "price": "$",
+        "location": {
+            "address1": "210-C Student Center",
+            "address2": "",
+            "address3": "",
+            "city": "Irvine",
+            "zip_code": "92697",
+            "country": "US",
+            "state": "CA"
+        },
+        "display_phone": "",
+        "distance": 0.0
+    },
+
+    {
+        "image_url": "",
+        "name": "Jamba",
+        "rating": 3.7,
+        "price": "$",
+        "location": {
+            "address1": "210-C Student Center",
+            "address2": "",
+            "address3": "",
+            "city": "Irvine",
+            "zip_code": "92697",
+            "country": "US",
+            "state": "CA"
+        },
+        "display_phone": "",
+        "distance": 0.0
+    },
+
+    {
+        "image_url": "",
+        "name": "Planteatery",
+        "rating": 3.0,
+        "price": "$",
+        "location": {
+            "address1": "210-C Student Center",
+            "address2": "",
+            "address3": "",
+            "city": "Irvine",
+            "zip_code": "92697",
+            "country": "US",
+            "state": "CA"
+        },
+        "display_phone": "",
+        "distance": 0.0
+    },
+
+    {
+        "image_url": "",
+        "name": "Panda Express",
+        "rating": 3.7,
+        "price": "$",
+        "location": {
+            "address1": "232-A Student Center",
+            "address2": "",
+            "address3": "",
+            "city": "Irvine",
+            "zip_code": "92697",
+            "country": "US",
+            "state": "CA"
+        },
+        "display_phone": "",
+        "distance": 0.0
+    },
+
+    {
+        "image_url": "",
+        "name": "Starbucks @ Student Center",
+        "rating": 4.1,
+        "price": "$$",
+        "location": {
+            "address1": "203-B Student Center",
+            "address2": "",
+            "address3": "",
+            "city": "Irvine",
+            "zip_code": "92697",
+            "country": "US",
+            "state": "CA"
+        },
+        "display_phone": "",
+        "distance": 0.0
+    },
+
+    {
+        "image_url": "",
+        "name": "Subway",
+        "rating": 3.4,
+        "price": "$",
+        "location": {
+            "address1": "A233 Student Center",
+            "address2": "",
+            "address3": "",
+            "city": "Irvine",
+            "zip_code": "92697",
+            "country": "US",
+            "state": "CA"
+        },
+        "display_phone": "",
+        "distance": 0.0
+    }
+]
