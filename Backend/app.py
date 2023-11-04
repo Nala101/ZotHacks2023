@@ -8,9 +8,8 @@ CORS(app)
 
 @app.route('/results')
 def getResults():
-    
         
-    url = "https://api.yelp.com/v3/businesses/search?latitude=33.650551206116795&longitude=-117.83889468961557&term=food&radius=10000&sort_by=best_match&limit=20"
+    url = "https://api.yelp.com/v3/businesses/search?latitude=33.650551206116795&longitude=-117.83889468961557&term=food&radius=10000&sort_by=best_match&limit=50"
 
     headers = {
         "accept": "application/json",
