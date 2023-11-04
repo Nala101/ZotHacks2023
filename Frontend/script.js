@@ -17,14 +17,6 @@ function getResturantsInAreaUCI(){
 
 }
 
-function onlyUTC(resturant) {
-  return resturant.distance < UTC_RADIUS;
-}
-function outsideUTC(resturant) {
-    return resturant.distance > UTC_RADIUS;
-}
-
-
 function SortInfo(searchResults){
 
     let results = searchResults;
@@ -43,4 +35,3 @@ function displayResults(){
 
 
 getResturantsInAreaUCI()
-getResturantsInAreaYelp()
