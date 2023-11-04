@@ -1,5 +1,5 @@
 
-let foodBtd = document.getElementsByClassName('getFood')
+let foodBtd = document.getElementById("search")
 
 foodBtd.onclick = ()
 
