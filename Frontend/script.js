@@ -1,11 +1,46 @@
 
-let foodBtd = document.getElementById("search");
 
-foodBtd.onclick = () => {
+const UTC_RADIUS = 360;
 
-    console.log("alive");
+let serverUrl = 'http://127.0.0.1:5000/results';
+
+function getResturantsInAreaYelp() {
+    fetch(serverUrl)
+        .then(res => res.json())
+        .then(SortInfo);
+}
+
+function getResturantsInAreaUCI(){
+    fetch('./on_campus_locations.json')
+    .then((response) => response.json())
+    .then((json) => console.log(json));
+
+}
+
+function onlyUTC(resturant) {
+  return resturant.distance < UTC_RADIUS;
+}
+function outsideUTC(resturant) {
+    return resturant.distance > UTC_RADIUS;
+}
+
+
+function SortInfo(searchResults){
+
+    let results = searchResults;
+
+    // let UTC = results.filter(onlyUTC);
+    // let outUTC = results.filter(outsideUTC);
+    
+    console.log(results);
+}
+
+
+function displayResults(){
+
 
 }
 
 
-
+getResturantsInAreaUCI()
+getResturantsInAreaYelp()
