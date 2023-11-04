@@ -18,7 +18,7 @@ def getResults():
 
     response = requests.get(url, headers=headers)
 
-    return jsonify(response)
+    return jsonify(response.json())
 
 
 

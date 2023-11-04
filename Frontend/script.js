@@ -2,7 +2,7 @@
 
 const UTC_RADIUS = 360;
 
-let serverUrl = 'http://127.0.0.1:5001/results';
+let serverUrl = 'http://127.0.0.1:5000/results';
 
 function getResturantsInAreaYelp() {
     fetch(serverUrl)
@@ -27,12 +27,12 @@ function outsideUTC(resturant) {
 
 function SortInfo(searchResults){
 
-    let results = JSON.parse(searchResults);
+    let results = searchResults;
 
-    let UTC = results.filter(onlyUTC);
-    let outUTC = results.filter(outsideUTC);
+    // let UTC = results.filter(onlyUTC);
+    // let outUTC = results.filter(outsideUTC);
     
-    console.log(onlyUTC);
+    console.log(results);
 }
 
 
