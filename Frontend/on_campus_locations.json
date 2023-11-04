@@ -1,0 +1,15 @@
+[
+    {
+        "image_url": "",
+        "name": "",
+        "rating": 0.0,
+        "price": "$",
+        "location": {
+            "display_address": [
+                ""
+            ]
+        },
+        "display_phone": "()",
+        "distance": 0.0
+    }
+]
