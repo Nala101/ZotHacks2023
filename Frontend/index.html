@@ -137,38 +137,38 @@
         </div>
     </section>
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
     <script>
-        document.getElementById("location").addEventListener("submit", function (e) {
-            e.preventDefault();
 
-            var locationdata = {
-                oncampus: document.getElementById("on-campus").value,
-                utc: document.getElementById("utc").value,
-                campusplaza: document.getElementById("campus-plaza").value,
-                nearbycampus: document.getElementById("nearby-campus").value,
-            };
+        var filters = {
+            location: "",
+            pricing: "",
+            rating: ""
+        }
+
+        $(document).ready(function () {
+            $('#location a').on('click', function () {
+                var txt= ($(this).text());
+                filters["location"] = txt;
+            });
         });
 
-        document.getElementById("pricing").addEventListener("submit", function (e) {
-            e.preventDefault();
-
-            var locationdata = {
-                dollar1: document.getElementById("$").value,
-                dollar2: document.getElementById("$$").value,
-                dollar3: document.getElementById("$$$").value,
-            };
+        $(document).ready(function () {
+            $('#pricing a').on('click', function () {
+                var txt= ($(this).text());
+                filters["pricing"] = txt;
+            });
+        });
+    
+        $(document).ready(function () {
+            $('#rating a').on('click', function () {
+                var txt= ($(this).text());
+                filters["rating"] = txt;
+            });
         });
 
-        document.getElementById("rating").addEventListener("submit", function (e) {
-            e.preventDefault();
-
-            var locationdata = {
-                twostars: document.getElementById("2-stars").value,
-                threestars: document.getElementById("3-stars").value,
-                fourstars: document.getElementById("4-stars").value,
-                fivestars: document.getElementById("5-stars").value,
-            };
-        });
+        console.log(filters);
 
     </script>
 
