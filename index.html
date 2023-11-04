@@ -10,6 +10,35 @@
 <body>
     <h1>AntSource</h1>
     <p>Are you not sure about where to eat on or nearby UCI? We'll help you find your anthill!</p>
+    
+    <section>
+        <h2>Choose which areas you want to eat from: </h2>
+        <form action="">
+            <div>
+                <input type="checkbox" name="on-campus" id="on-campus">
+                <label for="on-campus"> On-Campus Options &lpar;dining halls, food course&rpar; </label>
+            </div>
+
+            <div>
+                <input type="checkbox" name="" id="utc">
+                <label for="utc"> University Town Center &lpar;UTC&rpar; </label>
+            </div>
+
+            <div>
+                <input type="checkbox" name="campus-plaza" id="campus-plaza">
+                <label for="campus-plaza"> Campus Plaza </label>
+            </div>
+
+            <div>
+                <input type="checkbox" name="off-campus" id="off-campus">
+                <label for="off-campus"> Off-Campus within <input type="text" name="distance" id="miles" value="3"> miles </label>
+            </div>
+
+            <div>
+                <button type="submit">Tell me where I should eat!</button>
+            </div>
+        </form>
+    </section>
 </body>
 
 </html>
