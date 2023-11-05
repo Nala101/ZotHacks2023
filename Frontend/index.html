@@ -168,7 +168,7 @@
             $('#location a').on('click', function () {
                 var txt= ($(this).text());
                 filters["location"] = txt;
-                console.log(url);
+                filterquery(filters);
             });
         });
 
@@ -176,7 +176,8 @@
             $('#pricing a').on('click', function () {
                 var txt= ($(this).text());
                 filters["pricing"] = txt;
-                console.log(url);
+                console.log(filterquery(filters));
+                
             });
         });
     
@@ -184,17 +185,21 @@
             $('#rating a').on('click', function () {
                 var txt= ($(this).text());
                 filters["rating"] = txt;
-                console.log(url);
+                console.log(filterquery(filters));
             });
         });
 
         document.getElementById("random").addEventListener("click", function() {
             filters["random"] = true;
-            console.log(url);
+            console.log(filterquery(filters));
         });
 
-        const queryString = Object.keys(filters).map((key) => `${key}=${encodeURIComponent(filters[key])}`).join("&");
-        const url = `http://localhost:5000/?${queryString}`;
+        function filterquery(filters) {
+            const queryString = Object.keys(filters).map((key) => `${key}=${encodeURIComponent(filters[key])}`).join("&");
+            const url = `http://localhost:5000/?${queryString}`;
+            return url;
+        }
+            
 
         console.log(url)
 
