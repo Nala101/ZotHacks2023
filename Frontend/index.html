@@ -96,12 +96,12 @@
             <div class="row row-cols-3 row-cols-md-4 g-4">
                 <div class="col mt-5">
                     <div class="card h-100" style="width: 18rem;  border-radius: 30px">
-                        <img src="..." class="card-img-top" alt="...">
+                        <img src="..." id="image" class="card-img-top" alt="...">
                         <div class="card-body">
-                          <h5 class="card-title" style="font-family: 'Lora', serif;">Title</h5>
-                          <p class="card-rating" style="font-family: 'Raleway', sans-serif;">Rating</p>
-                          <p class="card-address" style="font-family: 'Raleway', sans-serif;">Address</p>
-                          <p class="card-price" style="font-family: 'Raleway', sans-serif;">$$$</p>
+                          <h5 class="card-title" id="title" style="font-family: 'Lora', serif;">Title</h5>
+                          <p class="card-rating" id="rating" style="font-family: 'Raleway', sans-serif;">Rating</p>
+                          <p class="card-address" id="address" style="font-family: 'Raleway', sans-serif;">Address</p>
+                          <p class="card-price" id="pricing" style="font-family: 'Raleway', sans-serif;">$$$</p>
                           <a href="#" class="btn btn-primary" style="background-color:#F4B942; font-family: 'Raleway', sans-serif;">View Map</a>
                         </div>
                       </div>
@@ -165,7 +165,7 @@
             $('#location a').on('click', function () {
                 var txt= ($(this).text());
                 filters["location"] = txt;
-                console.log(filters);
+                console.log(url);
             });
         });
 
@@ -173,7 +173,7 @@
             $('#pricing a').on('click', function () {
                 var txt= ($(this).text());
                 filters["pricing"] = txt;
-                console.log(filters);
+                console.log(url);
             });
         });
     
@@ -181,29 +181,43 @@
             $('#rating a').on('click', function () {
                 var txt= ($(this).text());
                 filters["rating"] = txt;
-                console.log(filters);
+                console.log(url);
             });
         });
 
         document.getElementById("random").addEventListener("click", function() {
             filters["random"] = true;
-            console.log(filters);
+            console.log(url);
         });
 
-        console.log(filters);
-
         const queryString = Object.keys(filters).map((key) => `${key}=${encodeURIComponent(filters[key])}`).join("&");
-        const url = "http://localhost:5000/?${queryString}";
+        const url = `http://localhost:5000/?${queryString}`;
 
         console.log(url)
 
-        fetch("http://localhost:5000/", {
+        fetch(url, {
             method: "GET",
             headers: {
                 "Content-Type": "application/json; charset=UTF-8",
             }
         })
             .then((response) => response.json())
+            .then(data => {
+                const title = document.getElementById("title");
+                title.textContent = data.name;
+
+                const rating = document.getElementById("rating");
+                rating.textContent = data.rating;
+
+                const pricing = document.getElementById("pricing");
+                pricing.textContent = data.price;
+
+                const image = document.getElementById("image");
+                image.textContent = data.image_url
+
+                const address = document.getElementById("address");
+                address.textContent = data.Location.address1 + data.Location.address2 + data.Location.address3 + data.Location.city + ", " + data.Location.state + data.Location.zip_code;
+            })
             .then((json) => console.log(json));
 
     </script>
