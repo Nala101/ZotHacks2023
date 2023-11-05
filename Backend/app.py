@@ -59,9 +59,20 @@ def getResultsOutUCI():
     }
     
     OutSideUCI = requests.get(url, headers=headers).json()
+        
+    for resturant in UTC['businesses']: 
+        deleteResturant(OutSideUCI['businesses'], resturant['name'])
     
+    for resturant in Plaza['businesses']:
+        del OutSideUCI['businesses'][resturant['name']]
+
 
     return jsonify(OutSideUCI.json())
+
+
+def deleteResturant(del_list, string):
+    for resturant in del_list:
+        
 
 
 @app.route('/InsideUCI')
