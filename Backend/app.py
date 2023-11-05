@@ -54,10 +54,14 @@ def getResults(filters : dict):
         Plaza = getResultsPlaza()
         locations = getResultsOutUCI(UTC, Plaza)
 
-    sortByPrice(locations, filters['pricing'])
+    locations = filterByPrice(locations, filters['pricing'])
 
-def sortByPrice(resturantList, price):
+def filterByPrice(resturantList, price):
     filteredList = []
+    
+    for resturant in resturantList:
+        if 'price' in resturant:
+            pass
     
         
     
