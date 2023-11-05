@@ -31,7 +31,7 @@
         </div>
     </header>
 
-    <section>
+    <section style="font-family:'Raleway',sans-serif;">
         <div class="container text-center mt-5">
             <div class="row">
                 <div class="col">
@@ -44,7 +44,7 @@
                         <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" style="border-radius: 10px; font-family: 'Raleway', sans-serif; font-size: 25px">
                           Location
                         </button>
-                        <ul class="dropdown-menu" style="color=#70747c;">
+                        <ul class="dropdown-menu" style="color: #70747c;">
                           <li ><a class="dropdown-item" href="#"> On campus </a></li>
                           <li><a class="dropdown-item" href="#"> UTC </a></li>
                           <li><a class="dropdown-item" href="#"> Campus Plaza </a></li>
@@ -57,10 +57,10 @@
                         <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" style="border-radius: 10px; font-family: 'Raleway', sans-serif; font-size: 25px">
                           Pricing
                         </button>
-                        <ul class="dropdown-menu">
-                          <li><a class="dropdown-item" href="#"> $ </a></li>
-                          <li><a class="dropdown-item" href="#"> $$ </a></li>
-                          <li><a class="dropdown-item" href="#"> $$$ </a></li>
+                        <ul class="dropdown-menu" id="pricing">
+                          <li><a class="dropdown-item" href="#" id="$"> $ </a></li>
+                          <li><a class="dropdown-item" href="#" id="$$"> $$ </a></li>
+                          <li><a class="dropdown-item" href="#" id="$$$"> $$$ </a></li>
                         </ul>
                     </div>
                 </div>
@@ -69,10 +69,11 @@
                         <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" style="border-radius: 10px; font-family: 'Raleway', sans-serif; font-size: 25px">
                           Rating
                         </button>
-                        <ul class="dropdown-menu">
-                          <li><a class="dropdown-item" href="#"> 3 stars </a></li>
-                          <li><a class="dropdown-item" href="#"> 4 stars </a></li>
-                          <li><a class="dropdown-item" href="#"> 5 stars </a></li>
+                        <ul class="dropdown-menu" id="rating">
+                        <li><a class="dropdown-item" href="#" id="2-stars"> 2 stars </a></li>
+                          <li><a class="dropdown-item" href="#" id="3-stars"> 3 stars </a></li>
+                          <li><a class="dropdown-item" href="#" id="4-stars"> 4 stars </a></li>
+                          <li><a class="dropdown-item" href="#" id="5-stars"> 5 stars </a></li>
                         </ul>
                     </div>
                 </div>
@@ -85,7 +86,7 @@
 
     </section>
 
-    <section>
+    <section style="font-family:'Raleway',sans-serif;">
         <div class="container justify-content-center mt-5">
             <div class="row row-cols-3 row-cols-md-4 g-4">
                 <div class="col mt-5">
@@ -135,11 +136,52 @@
                 </div>
             </div>
         </div>
-        
-
-        
-       
     </section>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    <script>
+
+        var filters = {
+            location: "",
+            pricing: "",
+            rating: ""
+        };
+
+        $(document).ready(function () {
+            $('#location a').on('click', function () {
+                var txt= ($(this).text());
+                filters["location"] = txt;
+            });
+        });
+
+        $(document).ready(function () {
+            $('#pricing a').on('click', function () {
+                var txt= ($(this).text());
+                filters["pricing"] = txt;
+            });
+        });
+    
+        $(document).ready(function () {
+            $('#rating a').on('click', function () {
+                var txt= ($(this).text());
+                filters["rating"] = txt;
+            });
+        });
+
+        console.log(filters);
+
+        fetch("http://localhost:5000/", {
+            method: "POST",
+            body: JSON.stringify(filters),
+            headers: {
+                "Content-Type": "application/json; charset=UTF-8",
+            }
+        })
+            .then((response) => response.json())
+            .then((json) => console.log(json));
+
+    </script>
 
 </body>
 
