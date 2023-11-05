@@ -54,16 +54,19 @@ def getResults(filters : dict):
         Plaza = getResultsPlaza()
         locations = getResultsOutUCI(UTC, Plaza)
 
-    locations = filterByPrice(locations, filters['pricing'].strip())
+    locations = sortByPrice(locations, filters['pricing'])
+    locations = filterByRating(locations, int( filters['rating'].strip()[0]))
 
 def filterByPrice(resturantList, price):
     filteredList = []
-    
-    for location in resturantList:
-        if 'price' in location:
-            if len(location['price']) <= len(price):
+
+def filterByRating(restaurantList, rating):
+    filteredList = []
+    for location in restaurantList:
+        if 'rating' in restaurantList:
+            if(restaurantList['rating'] >= rating):
                 filteredList.append(location)
-                
+    
     return filteredList
     
         
