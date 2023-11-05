@@ -145,7 +145,7 @@
             location: "",
             pricing: "",
             rating: ""
-        }
+        };
 
         $(document).ready(function () {
             $('#location a').on('click', function () {
@@ -169,6 +169,16 @@
         });
 
         console.log(filters);
+
+        fetch("../Backend/app.py", {
+            method: "POST",
+            body: JSON.stringify(filters),
+            headers: {
+                "Content-Type": "application/json; charset=UTF-8",
+            }
+        })
+            .then((response) => response.json())
+            .then((json) => console.log(json));
 
     </script>
 
