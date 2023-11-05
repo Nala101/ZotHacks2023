@@ -11,6 +11,12 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lora&family=Raleway&display=swap" rel="stylesheet"> 
     <title>AntSource</title>
+    <style>
+    #formInput:hover{
+        cursor: pointer;
+        color: rgb(64, 89, 173) !important;
+    }
+    </style>
 </head>
 
 <body style="background-color:#6B9AC4;">
@@ -24,7 +30,7 @@
             </div>
             
             <div class="col-6 text-right">
-                <p id = "form" style="font-size:35px; font-family:'Raleway',sans-serif; color:#EFF2F1;">Input Form</p>
+                <p id = "formInput" style="font-size:35px; font-family:'Raleway',sans-serif; color:#EFF2F1;">Input Form</p>
             </div>
     
         </div>
@@ -140,7 +146,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
     <script>
-        document.getElementById("form").addEventListener("click", function() {
+        document.getElementById("formInput").addEventListener("click", function() {
             var link = "index.html";
             window.open(link, '_blank');
         });

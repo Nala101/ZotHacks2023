@@ -11,6 +11,12 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lora&family=Raleway&display=swap" rel="stylesheet"> 
+    <style>
+        #formInput:hover{
+            cursor: pointer;
+            color: rgb(64, 89, 173) !important;
+        }
+    </style>
 </head>
 
 <header>
@@ -19,7 +25,7 @@
             <img src="C:\Users\jason\Downloads\VS Project Folder\zothacks-2023\ZotHacks2023\Frontend\stuffed_petr.png" width = "100px" height = "100px" alt="Stuffed Petr">
         </div>
         <div class="col text-right">
-            <p id="form" style="font-size:35px; font-family:'Raleway',sans-serif; color:#EFF2F1;">Input Form</p>
+            <p  type = "submit" id="formInput" style="font-size:35px; font-family:'Raleway',sans-serif; color:#EFF2F1">Input Form</p>
         </div>
 
     </div>
@@ -53,7 +59,7 @@
     </script>
 
     <script>
-        document.getElementById("form").addEventListener("click", function() {
+        document.getElementById("formInput").addEventListener("click", function() {
             var link = "index.html";
             window.open(link, '_blank');
         });
