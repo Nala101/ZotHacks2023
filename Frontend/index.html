@@ -112,34 +112,12 @@
                 </div>
                 <div class="col mt-5">
                     <div class="card h-100" style="width: 18rem; border-radius: 30px">
-                        <img src="..." class="card-img-top" alt="...">
+                        <img src="..." id="image" class="card-img-top" alt="...">
                         <div class="card-body">
-                          <h5 class="card-title" style="font-family: 'Lora', serif;">Featured</h5>
-                          <p class="card-location" style="font-family: 'Raleway', sans-serif;">Location</p>
-                          <p class="card-food" style="font-family: 'Raleway', sans-serif;">Food</p>
-                          <p class="card-description" style="font-family: 'Raleway', sans-serif;">Description............</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col mt-5">
-                    <div class="card h-100" style="width: 18rem; border-radius: 30px">
-                        <img src="..." class="card-img-top" alt="...">
-                        <div class="card-body">
-                          <h5 class="card-title" style="font-family: 'Lora', serif;">Featured</h5>
-                          <p class="card-location" style="font-family: 'Raleway', sans-serif;">Location</p>
-                          <p class="card-food" style="font-family: 'Raleway', sans-serif;">Food</p>
-                          <p class="card-description" style="font-family: 'Raleway', sans-serif;">Description............</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col mt-5">
-                    <div class="card h-100" style="width: 18rem; border-radius: 30px">
-                        <img src="..." class="card-img-top" alt="...">
-                        <div class="card-body">
-                          <h5 class="card-title" style="font-family: 'Lora', serif;">Featured</h5>
-                          <p class="card-location" style ="font-family: 'Raleway', sans-serif;">Location</p>
-                          <p class="card-food" style="font-family: 'Raleway', sans-serif;">Food</p>
-                          <p class="card-description" style="font-family: 'Raleway', sans-serif;">Description............</p>
+                          <h5 class="card-title" id="title" style="font-family: 'Lora', serif;">Featured</h5>
+                          <p class="card-location" id="location" style="font-family: 'Raleway', sans-serif;">Location</p>
+                          <p class="card-food" id="food" style="font-family: 'Raleway', sans-serif;">Food</p>
+                          <p class="card-description" id="description" style="font-family: 'Raleway', sans-serif;">Description............</p>
                         </div>
                     </div>
                 </div>
@@ -199,9 +177,6 @@
             const url = `http://localhost:5000/?${queryString}`;
             return url;
         }
-            
-
-        console.log(url)
 
         fetch(url, {
             method: "GET",
@@ -210,21 +185,42 @@
             }
         })
             .then((response) => response.json())
+
+            
             .then(data => {
-                const title = document.getElementById("title");
-                title.textContent = data.name;
+                data.foreach(function(d) {
+                    try {
+                        const title = document.getElementById("title");
+                        title.textContent = d.name;
 
-                const rating = document.getElementById("rating");
-                rating.textContent = data.rating;
+                        const food = document.getElementById("food");
+                        food.textContent = d.food;
 
-                const pricing = document.getElementById("pricing");
-                pricing.textContent = data.price;
+                        const description = document.getElementById("description");
+                        description.textContent = d.description;
 
-                const image = document.getElementById("image");
-                image.textContent = data.image_url
+                        const image = document.getElementById("image");
+                        image.src = d.image_url;
 
-                const address = document.getElementById("address");
-                address.textContent = data.Location.address1 + data.Location.address2 + data.Location.address3 + data.Location.city + ", " + data.Location.state + data.Location.zip_code;
+                        const location = document.getElementById("location");
+                        location.textContent = d.location;
+                    } catch (error) {
+                        const title = document.getElementById("title");
+                        title.textContent = d.name;
+
+                        const rating = document.getElementById("rating");
+                        rating.textContent = d.rating;
+
+                        const pricing = document.getElementById("pricing");
+                        pricing.textContent = d.price;
+
+                        const image = document.getElementById("image");
+                        image.src = d.image_url;
+
+                        const address = document.getElementById("address");
+                        address.textContent = d.Location.address1 + d.Location.address2 + d.Location.address3 + d.Location.city + ", " + d.Location.state + d.Location.zip_code;
+                    }
+                });
             })
             .then((json) => console.log(json));
 
