@@ -17,9 +17,23 @@ def getResults():
     }
 
     response = requests.get(url, headers=headers)
+    locations = _parse(response.json())
 
-    return jsonify(response.json())
+    return jsonify(locations)
 
+def _parse(res: dict) -> list:
+    '''Returns a list that only has the needed attributes of the locations'''
+    copy_of_res = res.copy()
 
-
-
+    condensed = dict()
+    locations = []
+    needed_attributes = ['name', 'image_url', 'rating', 'price', 'location', 'display_phone', 'distance']
+    for location in copy_of_res['businesses']:
+        attributes_to_delete = []
+        for attribute in location:
+            if attribute not in needed_attributes:
+                attributes_to_delete.append(attribute)
+        for attribute in attributes_to_delete:
+            del location[attribute]
+        
+    return copy_of_res['businesses']
