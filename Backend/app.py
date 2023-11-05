@@ -7,7 +7,8 @@ import random
 
 UTC_RADIUS = 360
 CAMPUS_PLAZA_RADIUS = 220
-OUTSIDE_UCI_RADIUS = 1000
+OUTSIDE_UCI_RADIUS = 10000
+LIMIT = 50
 
 
 app = Flask(__name__)
@@ -83,7 +84,7 @@ def getResultsUTC() -> list[dict]:
     '''gets the results from the Yelp API at UTC'''
 
     # sends a get request to yelp about food places around UTC
-    url = "https://api.yelp.com/v3/businesses/search?latitude=33.650551206116795&longitude=-117.83889468961557&term=food&radius=360&sort_by=best_match&limit=50"
+    url = f"https://api.yelp.com/v3/businesses/search?latitude=33.650551206116795&longitude=-117.83889468961557&term=food&radius={UTC_RADIUS}&sort_by=best_match&limit={LIMIT}"
 
     headers = {
         "accept": "application/json",
@@ -97,7 +98,7 @@ def getResultsPlaza() -> list[dict]:
     '''gets the results from the Yelp API at campus plaza'''
 
     # sends a get request to yelp about food places around Campus Plaza
-    url = "https://api.yelp.com/v3/businesses/search?latitude=33.64960859868817&longitude=-117.83154993786337&term=food&radius=220&sort_by=best_match&limit=20"
+    url = f"https://api.yelp.com/v3/businesses/search?latitude=33.64960859868817&longitude=-117.83154993786337&term=food&radius={CAMPUS_PLAZA_RADIUS}&sort_by=best_match&limit={LIMIT}"
 
     headers = {
         "accept": "application/json",
@@ -111,7 +112,7 @@ def getResultsOutUCI(UTC: list[dict], Plaza: list[dict]) -> list[dict]:
     '''gets the results from the Yelp API and filters out all the locations found at UTC and the Plaza'''
 
     # sends a get request to yelp about food places around UCI within 10,000 meters
-    url = "https://api.yelp.com/v3/businesses/search?latitude=33.64602211664342&longitude=-117.84272864126669&term=food&radius=10000&sort_by=best_match&limit=20"
+    url = f"https://api.yelp.com/v3/businesses/search?latitude=33.64602211664342&longitude=-117.84272864126669&term=food&radius={OUTSIDE_UCI_RADIUS}&sort_by=best_match&limit={LIMIT}"
 
     headers = {
         "accept": "application/json",
@@ -135,7 +136,7 @@ def getAllResults() -> list[dict]:
     '''gets all the results from the Yelp API and returns it as a python dictionary'''
 
     # sends a get request to yelp about food places around UCI within 10,000 meters
-    url = "https://api.yelp.com/v3/businesses/search?latitude=33.64602211664342&longitude=-117.84272864126669&term=food&radius=10000&sort_by=best_match&limit=20"
+    url = f"https://api.yelp.com/v3/businesses/search?latitude=33.64602211664342&longitude=-117.84272864126669&term=food&radius=10000&sort_by=best_match&limit={LIMIT}"
 
     headers = {
         "accept": "application/json",
@@ -205,8 +206,14 @@ def getResults() -> 'json':
             return jsonify(locations[randomIndex])
 
     except:
+        
         # if the query from the front end is not formatted correctly or the yelp api fails then it will
         # just return an empty json
+        
         return jsonify([])
 
     return jsonify(locations)
+
+if __name__ == '__main__':
+   print(getResults()) 
+   
