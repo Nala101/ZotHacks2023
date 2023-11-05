@@ -16,6 +16,10 @@
         cursor: pointer;
         color: rgb(64, 89, 173) !important;
     }
+    #formAnthill:hover{
+            cursor: pointer;
+            color: rgb(64, 89, 173) !important;
+        }
     </style>
 </head>
 
@@ -23,7 +27,7 @@
     <header>
         <div class="d-flex align-items-center">
             <div class="col-1">
-                <p style="font-size:40px; font-family:'Raleway',sans-serif; color:#EFF2F1;">AntHill</p>
+                <p id="formAnthill" style="font-size:40px; font-family:'Raleway',sans-serif; color:#EFF2F1;">AntHill</p>
             </div>
             <div class="col-5">
                 <img src="stuffed_petr.png" width = "100px" height = "100px" alt="Stuffed Petr" >
@@ -147,7 +151,14 @@
 
     <script>
         document.getElementById("formInput").addEventListener("click", function() {
-            var link = "index.html";
+            var link = "inputform.html";
+            window.open(link, '_blank');
+        });
+    </script>
+
+    <script>
+        document.getElementById("formAnthill").addEventListener("click", function() {
+            var link = "inputAnthill.html";
             window.open(link, '_blank');
         });
     </script>
