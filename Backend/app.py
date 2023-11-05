@@ -171,10 +171,19 @@ def getResults() -> 'json':
     '''Recives a get request and queries the the yelp api to get information on '''
     try:
         # this will get the query paramters
-        locationFilter = request.args.get('location').strip()
-        pricingFilter = request.args.get('pricing').strip()
-        ratingFilter = request.args.get('rating').strip()
-        random = request.args.get('random').strip()
+        locationFilter = request.args.get('location')
+        pricingFilter = request.args.get('pricing')
+        ratingFilter = request.args.get('rating')
+        random = request.args.get('random')
+        
+        if locationFilter != None:
+            locationFilter.strip()
+        if pricingFilter != None:
+            pricingFilter.strip()
+        if ratingFilter != None:
+            ratingFilter.strip()
+        if random != None:
+            random.strip() 
 
         # depending on the location sent, it will query the yelp API accordingly
         if locationFilter == 'UTC':
@@ -205,12 +214,9 @@ def getResults() -> 'json':
             randomIndex = random.randint(0, len(locations))
             return jsonify(locations[randomIndex])
 
-    except:
-        
-        # if the query from the front end is not formatted correctly or the yelp api fails then it will
-        # just return an empty json
-        
-        return jsonify([])
+    except Exception as e: 
+        print(e)
+        return {'ERROR': str(e)}
 
     return jsonify(locations)
 

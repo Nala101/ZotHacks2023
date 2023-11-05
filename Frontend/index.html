@@ -168,7 +168,7 @@
             $('#location a').on('click', function () {
                 var txt= ($(this).text());
                 filters["location"] = txt;
-                console.log(filterquery(filters));
+                filterquery(filters);
             });
         });
 
@@ -176,7 +176,7 @@
             $('#pricing a').on('click', function () {
                 var txt= ($(this).text());
                 filters["pricing"] = txt;
-                console.log(filterquery(filters));
+                filterquery(filters);
                 
             });
         });
@@ -185,48 +185,51 @@
             $('#rating a').on('click', function () {
                 var txt= ($(this).text());
                 filters["rating"] = txt;
-                console.log(filterquery(filters));
+                filterquery(filters);
             });
         });
 
         document.getElementById("random").addEventListener("click", function() {
             filters["random"] = true;
-            console.log(filterquery(filters));
+            filterquery(filters);
         });
 
         function filterquery(filters) {
             const queryString = Object.keys(filters).map((key) => `${key}=${encodeURIComponent(filters[key])}`).join("&");
             const url = `http://localhost:5000/?${queryString}`;
-            return url;
+            console.log(url);
+            //return url;
+
+
+            fetch(url, {
+                method: "GET",
+                headers: {
+                    "Content-Type": "application/json; charset=UTF-8",
+                }
+            })
+                .then((response) => response.json())
+                .then(data => {
+                    console.log("test");
+                    console.log(data);
+                    const title = document.getElementById("title");
+                    title.textContent = data.name;
+
+                    const rating = document.getElementById("rating");
+                    rating.textContent = data.rating;
+
+                    const pricing = document.getElementById("pricing");
+                    pricing.textContent = data.price;
+
+                    const image = document.getElementById("image");
+                    image.textContent = data.image_url
+
+                    const address = document.getElementById("address");
+                    address.textContent = data.Location[address1] + data.Location[address2] + data.Location[address3] + data.Location.city + ", " + data.Location.state + data.Location.zip_code;
+                })
+                .then((json) => console.log(json));
         }
             
 
-        console.log(url)
-
-        fetch(url, {
-            method: "GET",
-            headers: {
-                "Content-Type": "application/json; charset=UTF-8",
-            }
-        })
-            .then((response) => response.json())
-            .then(data => {
-                const title = document.getElementById("title");
-                title.textContent = data.name;
-
-                const rating = document.getElementById("rating");
-                rating.textContent = data.rating;
-
-                const pricing = document.getElementById("pricing");
-                pricing.textContent = data.price;
-
-                const image = document.getElementById("image");
-                image.textContent = data.image_url
-
-                const address = document.getElementById("address");
-                address.textContent = data.Location.address1 + data.Location.address2 + data.Location.address3 + data.Location.city + ", " + data.Location.state + data.Location.zip_code;
-            })
-            .then((json) => console.log(json));
 
     </script>
 
