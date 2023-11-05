@@ -174,7 +174,7 @@ def getResults() -> 'json':
         locationFilter = request.args.get('location')
         pricingFilter = request.args.get('pricing')
         ratingFilter = request.args.get('rating')
-        random = request.args.get('random')
+        randomFilter = request.args.get('random')
         
         if locationFilter != None:
             locationFilter.strip()
@@ -182,8 +182,8 @@ def getResults() -> 'json':
             pricingFilter.strip()
         if ratingFilter != None:
             ratingFilter.strip()
-        if random != None:
-            random.strip() 
+        if randomFilter != None:
+            randomFilter.strip() 
 
         # depending on the location sent, it will query the yelp API accordingly
         if locationFilter == 'UTC':
@@ -206,11 +206,11 @@ def getResults() -> 'json':
         # checks if there is a filter in place and applies them
         if pricingFilter != None:
             locations = filterByPrice(locations, pricingFilter)
-        if ratingFilter != None:
+        if ratingFilter != None and ratingFilter != '':
             locations = filterByRating(locations, int(ratingFilter[0]))
 
         # checks if the query is asking for a random one, if so it will get a random location
-        if random != None:
+        if randomFilter != None:
             randomIndex = random.randint(0, len(locations))
             return jsonify(locations[randomIndex])
 
