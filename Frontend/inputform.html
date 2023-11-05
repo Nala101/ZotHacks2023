@@ -16,7 +16,7 @@
     <header>
         <div class="d-flex align-items-center">
             <div class="col-1">
-                <p style="font-size:40px; font-family:'Raleway',sans-serif; color:#EFF2F1;">AntHill</p>
+                <p id="form" style="font-size:40px; font-family:'Raleway',sans-serif; color:#EFF2F1;">AntHill</p>
             </div>
             <div class="col-5">
                 <img src="stuffed_petr.png" width = "100px" height = "100px" alt="Stuffed Petr" >
@@ -33,25 +33,25 @@
     <section class="container mt-5" style="width: 40%">
         <div class="input-group mb-4">
             <div class="col align-items-center">
-                <p style="font-family:'Raleway',sans-serif; color:#F4B942"><b>Club Name</b></p>
+                <p style="font-family:'Raleway',sans-serif; color:#EFF2F1;"><b>Club Name</b></p>
                 <input type="text" class="form-control" placeholder="Enter name of club/organization..." aria-label="club-name" aria-describedby="basic-addon1">
             </div>
         </div>
         <div class="input-group mb-4">
             <div class="col align-items-center">
-                <p style="font-family:'Raleway',sans-serif; color:#F4B942"><b>Location</b></p>
+                <p style="font-family:'Raleway',sans-serif; color:#EFF2F1;"><b>Location</b></p>
                 <input type="text" class="form-control" placeholder="Enter location (e.g. Outer Ring Road)..." aria-label="club-name" aria-describedby="basic-addon1">
             </div>
         </div>
         <div class="input-group mb-4">
             <div class="col align-items-center">
-                <p style="font-family:'Raleway',sans-serif; color:#F4B942;"><b>Food</b></p>
+                <p style="font-family:'Raleway',sans-serif; color:#EFF2F1;"><b>Food</b></p>
                 <input type="text" class="form-control" placeholder="Enter type of food(s)..." aria-label="club-name" aria-describedby="basic-addon1">
             </div>
         </div>
         <div class="input-group mb-4">
             <div class="col align-items-center">
-                <p style="font-family:'Raleway',sans-serif; color:#F4B942;"><b>Description</b></p>
+                <p style="font-family:'Raleway',sans-serif; color:#EFF2F1;"><b>Description</b></p>
                 <input type="text" class="form-control" placeholder="Enter short description..." aria-label="club-name" aria-describedby="basic-addon1">
             </div>
         </div>
@@ -60,5 +60,12 @@
         </div>
     </section>
     
+    <script>
+        document.getElementById("form").addEventListener("click", function() {
+            var link = "index.html";
+            window.location.href = link;
+        });
+    </script>
+
 </body>
 </html>
