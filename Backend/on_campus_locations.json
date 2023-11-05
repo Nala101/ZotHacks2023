@@ -1,24 +1,7 @@
 [
-    {
-        "image_url": "",
-        "name": "",
-        "rating": 0.0,
-        "price": "$",
-        "location": {
-            "address1": "",
-            "address2": "",
-            "address3": "",
-            "city": "Irvine",
-            "zip_code": "",
-            "country": "US",
-            "state": "CA"
-        },
-        "display_phone": "",
-        "distance": 0.0
-    },
 
     {
-        "image_url": "",
+        "image_url": "https://s3-media0.fl.yelpcdn.com/bphoto/P0DIhR8cO-JxYygc3V3aaQ/348s.jpg",
         "name": "Brandywine",
         "rating": 4.1,
         "price": "$",
@@ -36,7 +19,7 @@
     },
 
     {
-        "image_url": "",
+        "image_url": "https://newuniversity.org/wp-content/uploads/2023/04/unnamed-12.jpg",
         "name": "Garbonzo Mediterranean Fresh",
         "rating": 2.7,
         "price": "$",
@@ -54,7 +37,7 @@
     },
     
     {
-        "image_url": "",
+        "image_url": "https://lh3.googleusercontent.com/p/AF1QipNQ449oJS6opIKVKUNzjY5uxKExKw2fKTdEoeen=s1360-w1360-h1020",
         "name": "Java City Kiosk",
         "rating": 4.0,
         "price": "$",
@@ -72,7 +55,7 @@
     },
 
     {
-        "image_url": "",
+        "image_url": "https://s3-media0.fl.yelpcdn.com/bphoto/IsD1u96h0tqhuJzrcnOA5g/348s.jpg",
         "name": "Med Ed Cafe",
         "rating": 4.4,
         "price": "$",
@@ -90,7 +73,7 @@
     },
 
     {
-        "image_url": "",
+        "image_url": "https://pbs.twimg.com/media/C8dvfvUUQAEJH_N.jpg",
         "name": "Starbucks @ Biological Sciences",
         "rating": 4.2,
         "price": "$$",
@@ -108,7 +91,7 @@
     },
     
     {
-        "image_url": "",
+        "image_url": "https://www.businessbecause.com/uploads/default/news/images/1646050548.png",
         "name": "Starbucks @ Paul Merage School of Business",
         "rating": 4.1,
         "price": "$$",
@@ -126,7 +109,7 @@
     },
 
     {
-        "image_url": "",
+        "image_url": "https://images.rsmdesign.com/0f2e9c36-4a4d-4c84-a2e0-e6ebc43a4895.jpg",
         "name": "The Anteatery",
         "rating": 4.1,
         "price": "$",
@@ -144,7 +127,7 @@
     },
 
     {
-        "image_url": "",
+        "image_url": "https://www.arts.uci.edu/sites/default/files/GreenRoomCafe_2_web.jpg",
         "name": "The Green Room",
         "rating": 4.8,
         "price": "$",
@@ -162,7 +145,7 @@
     },
 
     {
-        "image_url": "",
+        "image_url": "https://i.redd.it/vk3rblf6wuq61.jpg",
         "name": "Burgers + Fries",
         "rating": 4.1,
         "price": "$",
@@ -180,7 +163,7 @@
     },
 
     {
-        "image_url": "",
+        "image_url": "https://i.redd.it/vk3rblf6wuq61.jpg",
         "name": "Greens to Go",
         "rating": 4.1,
         "price": "$",
@@ -198,7 +181,7 @@
     },
 
     {
-        "image_url": "",
+        "image_url": "https://i.redd.it/vk3rblf6wuq61.jpg",
         "name": "Enstein Bros Bagels",
         "rating": 4.1,
         "price": "$",
@@ -216,7 +199,7 @@
     },
 
     {
-        "image_url": "",
+        "image_url": "https://i.redd.it/vk3rblf6wuq61.jpg",
         "name": "Tortilla Fresca",
         "rating": 4.1,
         "price": "$",
@@ -234,7 +217,7 @@
     },
 
     {
-        "image_url": "",
+        "image_url": "https://studentcenter.uci.edu/wp-content/uploads/2020/07/dine-bento-sushi-logo.png",
         "name": "Bento Sushi",
         "rating": 2.7,
         "price": "$",
@@ -252,7 +235,7 @@
     },
 
     {
-        "image_url": "",
+        "image_url": "https://studentcenter.uci.edu/wp-content/uploads/2020/07/dine-logo-jamba.png",
         "name": "Jamba",
         "rating": 3.7,
         "price": "$",
@@ -270,7 +253,7 @@
     },
 
     {
-        "image_url": "",
+        "image_url": "https://studentcenter.uci.edu/wp-content/uploads/2020/07/dine-planteatery-logo.png",
         "name": "Planteatery",
         "rating": 3.0,
         "price": "$",
@@ -288,7 +271,7 @@
     },
 
     {
-        "image_url": "",
+        "image_url": "https://studentcenter.uci.edu/wp-content/uploads/2020/07/dine-logo-panda.png",
         "name": "Panda Express",
         "rating": 3.7,
         "price": "$",
@@ -306,7 +289,7 @@
     },
 
     {
-        "image_url": "",
+        "image_url": "https://fastly.4sqi.net/img/general/600x600/658747_Rp1Bedj9S0Hg4YOmk5UnljZ7fJ3gdXVtqJT9jfVhlRg.jpg",
         "name": "Starbucks @ Student Center",
         "rating": 4.1,
         "price": "$$",
@@ -324,7 +307,7 @@
     },
 
     {
-        "image_url": "",
+        "image_url": "https://studentcenter.uci.edu/wp-content/uploads/2020/07/dine-logo-subway.png",
         "name": "Subway",
         "rating": 3.4,
         "price": "$",

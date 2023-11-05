@@ -11,20 +11,26 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lora&family=Raleway&display=swap" rel="stylesheet"> 
     <title>AntSource</title>
+    <style>
+    #formInput:hover{
+        cursor: pointer;
+        color: rgb(64, 89, 173) !important;
+    }
+    </style>
 </head>
 
 <body style="background-color:#6B9AC4;">
     <header>
         <div class="d-flex align-items-center">
             <div class="col-1">
-                <p style="font-size:30px; font-family:'Raleway',sans-serif; color:#EFF2F1;">AntSource</p>
+                <p style="font-size:40px; font-family:'Raleway',sans-serif; color:#EFF2F1;">AntHill</p>
             </div>
             <div class="col-5">
                 <img src="stuffed_petr.png" width = "100px" height = "100px" alt="Stuffed Petr" >
             </div>
             
             <div class="col-6 text-right">
-                <p style="font-size:25px; font-family:'Raleway',sans-serif; color:#EFF2F1;">Input Form</p>
+                <p id = "formInput" style="font-size:35px; font-family:'Raleway',sans-serif; color:#EFF2F1;">Input Form</p>
             </div>
     
         </div>
@@ -140,7 +146,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
     <script>
-        document.getElementById("form").addEventListener("click", function() {
+        document.getElementById("formInput").addEventListener("click", function() {
             var link = "index.html";
             window.open(link, '_blank');
         });
@@ -177,9 +183,13 @@
 
         console.log(filters);
 
+        const queryString = Object.keys(filters).map((key) => `${key}=${encodeURIComponent(filters[key])}`).join("&");
+        const url = "http://localhost:5000/?${queryString}";
+
+        console.log(url)
+
         fetch("http://localhost:5000/", {
-            method: "POST",
-            body: JSON.stringify(filters),
+            method: "GET",
             headers: {
                 "Content-Type": "application/json; charset=UTF-8",
             }
