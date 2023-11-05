@@ -21,16 +21,16 @@
                 <img src="..." alt="...">
             </div>
             <div class="col text-left">
-                <p style="font-size:35px; font-family:'Raleway',sans-serif;">AntSource</p>
+                <p style="font-size:35px; font-family: 'Lora', serif">AntSource</p>
             </div>
             <div class="col text-right">
-                <p style="font-size:35px; font-family:'Raleway',sans-serif;">Input Form</p>
+                <p style="font-size:25px; font-family:'Raleway',sans-serif;">Input Form</p>
             </div>
     
         </div>
     </header>
 
-    <section>
+    <section style="font-family:'Raleway',sans-serif;">
         <div class="container text-center mt-5">
             <div class="row">
                 <div class="col">
@@ -43,11 +43,11 @@
                         <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" style="border-radius: 10px">
                           Location
                         </button>
-                        <ul class="dropdown-menu">
-                          <li><a class="dropdown-item" href="#"> On campus </a></li>
-                          <li><a class="dropdown-item" href="#"> UTC </a></li>
-                          <li><a class="dropdown-item" href="#"> Campus Plaza </a></li>
-                          <li><a class="dropdown-item" href="#"> Nearby campus </a></li>
+                        <ul class="dropdown-menu" id="location">
+                          <li><a class="dropdown-item" href="#" id="on-campus"> On campus </a></li>
+                          <li><a class="dropdown-item" href="#" id="utc"> UTC </a></li>
+                          <li><a class="dropdown-item" href="#" id="campus-plaza"> Campus Plaza </a></li>
+                          <li><a class="dropdown-item" href="#" id="nearby-campus"> Nearby campus </a></li>
                         </ul>
                     </div>
                 </div>
@@ -56,10 +56,10 @@
                         <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" style="border-radius: 10px">
                           Pricing
                         </button>
-                        <ul class="dropdown-menu">
-                          <li><a class="dropdown-item" href="#"> $ </a></li>
-                          <li><a class="dropdown-item" href="#"> $$ </a></li>
-                          <li><a class="dropdown-item" href="#"> $$$ </a></li>
+                        <ul class="dropdown-menu" id="pricing">
+                          <li><a class="dropdown-item" href="#" id="$"> $ </a></li>
+                          <li><a class="dropdown-item" href="#" id="$$"> $$ </a></li>
+                          <li><a class="dropdown-item" href="#" id="$$$"> $$$ </a></li>
                         </ul>
                     </div>
                 </div>
@@ -68,10 +68,11 @@
                         <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" style="border-radius: 10px">
                           Rating
                         </button>
-                        <ul class="dropdown-menu">
-                          <li><a class="dropdown-item" href="#"> 3 stars </a></li>
-                          <li><a class="dropdown-item" href="#"> 4 stars </a></li>
-                          <li><a class="dropdown-item" href="#"> 5 stars </a></li>
+                        <ul class="dropdown-menu" id="rating">
+                        <li><a class="dropdown-item" href="#" id="2-stars"> 2 stars </a></li>
+                          <li><a class="dropdown-item" href="#" id="3-stars"> 3 stars </a></li>
+                          <li><a class="dropdown-item" href="#" id="4-stars"> 4 stars </a></li>
+                          <li><a class="dropdown-item" href="#" id="5-stars"> 5 stars </a></li>
                         </ul>
                     </div>
                 </div>
@@ -84,7 +85,7 @@
 
     </section>
 
-    <section>
+    <section style="font-family:'Raleway',sans-serif;">
         <div class="container justify-content-center mt-5">
             <div class="row row-cols-3 row-cols-md-4 g-4">
                 <div class="col mt-5">
@@ -134,11 +135,42 @@
                 </div>
             </div>
         </div>
-        
-
-        
-       
     </section>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    <script>
+
+        var filters = {
+            location: "",
+            pricing: "",
+            rating: ""
+        }
+
+        $(document).ready(function () {
+            $('#location a').on('click', function () {
+                var txt= ($(this).text());
+                filters["location"] = txt;
+            });
+        });
+
+        $(document).ready(function () {
+            $('#pricing a').on('click', function () {
+                var txt= ($(this).text());
+                filters["pricing"] = txt;
+            });
+        });
+    
+        $(document).ready(function () {
+            $('#rating a').on('click', function () {
+                var txt= ($(this).text());
+                filters["rating"] = txt;
+            });
+        });
+
+        console.log(filters);
+
+    </script>
 
 </body>
 
