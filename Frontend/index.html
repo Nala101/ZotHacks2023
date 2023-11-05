@@ -4,19 +4,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Lora&family=Raleway&display=swap" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css2?family=Lora&family=Raleway&display=swap" rel="stylesheet">
     <title>AntSource</title>
     <style>
-    #formInput:hover{
-        cursor: pointer;
-        color: rgb(64, 89, 173) !important;
-    }
-    #formAnthill:hover{
+        #formInput:hover {
+            cursor: pointer;
+            color: rgb(64, 89, 173) !important;
+        }
+
+        #formAnthill:hover {
             cursor: pointer;
             color: rgb(64, 89, 173) !important;
         }
@@ -30,13 +32,14 @@
                 <p id="formAnthill" style="font-size:40px; font-family:'Raleway',sans-serif; color:#EFF2F1;">AntHill</p>
             </div>
             <div class="col-5">
-                <img src="stuffed_petr.png" width = "100px" height = "100px" alt="Stuffed Petr" >
+                <img src="stuffed_petr.png" width="100px" height="100px" alt="Stuffed Petr">
             </div>
-            
+
             <div class="col-6 text-right">
-                <p id = "formInput" style="font-size:35px; font-family:'Raleway',sans-serif; color:#EFF2F1;">Input Form</p>
+                <p id="formInput" style="font-size:35px; font-family:'Raleway',sans-serif; color:#EFF2F1;">Input Form
+                </p>
             </div>
-    
+
         </div>
     </header>
 
@@ -45,82 +48,67 @@
             <div class="row">
                 <div class="col">
                     <div>
-                        <button type="button" class="btn btn-primary" id="random" style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem; border-radius: 10px; font-family: 'Raleway', sans-serif; background-color:#F4B942; font-size: 25px"> Surprise Me! </button>
+                        <button type="button" class="btn btn-primary" id="random"
+                            style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem; border-radius: 10px; font-family: 'Raleway', sans-serif; background-color:#F4B942; font-size: 25px">
+                            Surprise Me! </button>
                     </div>
                 </div>
                 <div class="col">
                     <div class="dropdown">
-                        <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" style="border-radius: 10px; font-family: 'Raleway', sans-serif; font-size: 25px">
-                          Location
+                        <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown"
+                            aria-expanded="false"
+                            style="border-radius: 10px; font-family: 'Raleway', sans-serif; font-size: 25px">
+                            Location
                         </button>
                         <ul class="dropdown-menu" id="location" style="background:#70747c;">
-                          <li ><a class="dropdown-item" href="#" style="color:#EFF2F1"> On campus </a></li>
-                          <li><a class="dropdown-item" href="#" style="color:#EFF2F1"> UTC </a></li>
-                          <li><a class="dropdown-item" href="#" style="color:#EFF2F1"> Campus Plaza </a></li>
-                          <li><a class="dropdown-item" href="#" style="color:#EFF2F1"> Nearby campus </a></li>
+                            <li><a class="dropdown-item" href="#" style="color:#EFF2F1"> On campus </a></li>
+                            <li><a class="dropdown-item" href="#" style="color:#EFF2F1"> UTC </a></li>
+                            <li><a class="dropdown-item" href="#" style="color:#EFF2F1"> Campus Plaza </a></li>
+                            <li><a class="dropdown-item" href="#" style="color:#EFF2F1"> Nearby campus </a></li>
                         </ul>
                     </div>
                 </div>
                 <div class="col">
                     <div class="dropdown">
-                        <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" style="border-radius: 10px; font-family: 'Raleway', sans-serif; font-size: 25px">
-                          Pricing
+                        <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown"
+                            aria-expanded="false"
+                            style="border-radius: 10px; font-family: 'Raleway', sans-serif; font-size: 25px">
+                            Pricing
                         </button>
                         <ul class="dropdown-menu" id="pricing" style="background:#70747c;">
-                          <li><a class="dropdown-item" href="#" id="$" style="color:#EFF2F1"> $ </a></li>
-                          <li><a class="dropdown-item" href="#" id="$$" style="color:#EFF2F1"> $$ </a></li>
-                          <li><a class="dropdown-item" href="#" id="$$$" style="color:#EFF2F1"> $$$ </a></li>
+                            <li><a class="dropdown-item" href="#" id="$" style="color:#EFF2F1"> $ </a></li>
+                            <li><a class="dropdown-item" href="#" id="$$" style="color:#EFF2F1"> $$ </a></li>
+                            <li><a class="dropdown-item" href="#" id="$$$" style="color:#EFF2F1"> $$$ </a></li>
                         </ul>
                     </div>
                 </div>
                 <div class="col">
                     <div class="dropdown">
-                        <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" style="border-radius: 10px; font-family: 'Raleway', sans-serif; font-size: 25px">
-                          Rating
+                        <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown"
+                            aria-expanded="false"
+                            style="border-radius: 10px; font-family: 'Raleway', sans-serif; font-size: 25px">
+                            Rating
                         </button>
                         <ul class="dropdown-menu" id="rating" style="background:#70747c;">
-                        <li><a class="dropdown-item" href="#" id="2-stars" style="color:#EFF2F1"> 2 stars </a></li>
-                          <li><a class="dropdown-item" href="#" id="3-stars" style="color:#EFF2F1"> 3 stars </a></li>
-                          <li><a class="dropdown-item" href="#" id="4-stars" style="color:#EFF2F1"> 4 stars </a></li>
-                          <li><a class="dropdown-item" href="#" id="5-stars" style="color:#EFF2F1"> 5 stars </a></li>
+                            <li><a class="dropdown-item" href="#" id="2-stars" style="color:#EFF2F1"> 2 stars </a></li>
+                            <li><a class="dropdown-item" href="#" id="3-stars" style="color:#EFF2F1"> 3 stars </a></li>
+                            <li><a class="dropdown-item" href="#" id="4-stars" style="color:#EFF2F1"> 4 stars </a></li>
+                            <li><a class="dropdown-item" href="#" id="5-stars" style="color:#EFF2F1"> 5 stars </a></li>
                         </ul>
                     </div>
                 </div>
             </div>
-            
-        
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
-        crossorigin="anonymous"></script>
+
+
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+                integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+                crossorigin="anonymous"></script>
 
     </section>
 
     <section style="font-family:'Raleway',sans-serif;">
         <div class="container justify-content-center mt-5">
-            <div class="row row-cols-3 row-cols-md-4 g-4">
-                <div class="col mt-5">
-                    <div class="card h-100" style="width: 18rem;  border-radius: 30px">
-                        <img src="..." id="image" class="card-img-top" alt="...">
-                        <div class="card-body">
-                          <h5 class="card-title" id="title" style="font-family: 'Lora', serif;">Title</h5>
-                          <p class="card-rating" id="rating" style="font-family: 'Raleway', sans-serif;">Rating</p>
-                          <p class="card-address" id="address" style="font-family: 'Raleway', sans-serif;">Address</p>
-                          <p class="card-price" id="pricing" style="font-family: 'Raleway', sans-serif;">$$$</p>
-                          <a href="#" class="btn btn-primary" style="background-color:#F4B942; font-family: 'Raleway', sans-serif;">View Map</a>
-                        </div>
-                      </div>
-                </div>
-                <div class="col mt-5">
-                    <div class="card h-100" style="width: 18rem; border-radius: 30px">
-                        <img src="..." id="image" class="card-img-top" alt="...">
-                        <div class="card-body">
-                          <h5 class="card-title" id="title" style="font-family: 'Lora', serif;">Featured</h5>
-                          <p class="card-location" id="location" style="font-family: 'Raleway', sans-serif;">Location</p>
-                          <p class="card-food" id="food" style="font-family: 'Raleway', sans-serif;">Food</p>
-                          <p class="card-description" id="description" style="font-family: 'Raleway', sans-serif;">Description............</p>
-                        </div>
-                    </div>
-                </div>
+            <div class="row row-cols-3 row-cols-md-4 g-4" id="INSERT-HERE">
             </div>
         </div>
     </section>
@@ -128,7 +116,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
     <script>
-        document.getElementById("formInput").addEventListener("click", function() {
+        document.getElementById("formInput").addEventListener("click", function () {
             var link = "inputform.html";
             window.location.href = link;
         });
@@ -144,7 +132,7 @@
 
         $(document).ready(function () {
             $('#location a').on('click', function () {
-                var txt= ($(this).text());
+                var txt = ($(this).text());
                 filters["location"] = txt;
                 filterquery(filters);
             });
@@ -152,22 +140,22 @@
 
         $(document).ready(function () {
             $('#pricing a').on('click', function () {
-                var txt= ($(this).text());
+                var txt = ($(this).text());
                 filters["pricing"] = txt;
                 filterquery(filters);
-                
+
             });
         });
-    
+
         $(document).ready(function () {
             $('#rating a').on('click', function () {
-                var txt= ($(this).text());
+                var txt = ($(this).text());
                 filters["rating"] = txt;
                 filterquery(filters);
             });
         });
 
-        document.getElementById("random").addEventListener("click", function() {
+        document.getElementById("random").addEventListener("click", function () {
             filters["random"] = true;
             filterquery(filters);
         });
@@ -188,9 +176,23 @@
                 .then((response) => response.json())
                 .then(data => {
                     console.log(data);
-                    data.foreach(function(d) {
-                        try {
-                            const title = document.getElementById("title");
+                    const htmlString = data.map(function (d) {
+                        if (d.description) {
+                            const clubcard = `<div class="col mt-5">
+                                <div class="card h-100" style="width: 18rem; border-radius: 30px">
+                                    <img src="${d.image_url}" id="club-image" class="card-img-top" alt="...">
+                                    <div class="card-body">
+                                    <h5 class="card-title" id="club-title" style="font-family: 'Lora', serif;">${d.name}</h5>
+                                    <p class="card-food" id="food" style="font-family: 'Raleway', sans-serif;">${d.food}</p>
+                                    <p class="card-food" id="location" style="font-family: 'Raleway', sans-serif;">${d.location}</p>
+                                    <p class="card-description" id="description" style="font-family: 'Raleway', sans-serif;">${d.description}</p>
+                                    </div>
+                                </div>
+                            </div>
+                            `
+                            return clubcard;
+                            /*
+                            const title = document.getElementById("club-title");
                             title.textContent = d.name;
 
                             const food = document.getElementById("food");
@@ -199,13 +201,26 @@
                             const description = document.getElementById("description");
                             description.textContent = d.description;
 
-                            const image = document.getElementById("image");
+                            const image = document.getElementById("club-image");
                             image.src = d.image_url;
 
                             const location = document.getElementById("location");
-                            location.textContent = d.location;
-                        } catch (error) {
-                            const title = document.getElementById("title");
+                            location.textContent = d.location;*/
+                        } else  {
+                            const nonclubcard = `<div class="col mt-5">
+                                <div class="card h-100" style="width: 18rem;  border-radius: 30px">
+                                    <img src="${d.image_url}" id="non-club-image" class="card-img-top" alt="...">
+                                    <div class="card-body">
+                                      <h5 class="card-title" id="non-club-title" style="font-family: 'Lora', serif;">${d.name}</h5>
+                                      <p class="card-rating" id="non-club-rating" style="font-family: 'Raleway', sans-serif;">${d.rating}</p>
+                                    </div>
+                                  </div>
+                            </div>
+                            `
+                            return nonclubcard;
+
+                            /*
+                            const title = document.getElementById("non-club-title");
                             title.textContent = d.name;
 
                             const rating = document.getElementById("rating");
@@ -214,17 +229,20 @@
                             const pricing = document.getElementById("pricing");
                             pricing.textContent = d.price;
 
-                            const image = document.getElementById("image");
+                            const image = document.getElementById("non-club-image");
                             image.src = d.image_url;
 
                             const address = document.getElementById("address");
-                            address.textContent = d.Location.address1 + d.Location.address2 + d.Location.address3 + d.Location.city + ", " + d.Location.state + d.Location.zip_code;
+                            address.textContent = d.Location.address1 + d.Location.address2 + d.Location.address3 + d.Location.city + ", " + d.Location.state + d.Location.zip_code;*/
                         }
                     });
-            })
+
+                    document.getElementById("INSERT-HERE").innerHTML  = htmlString.join("")
+                    
+                })
                 .then((json) => console.log(json));
         }
-            
+
 
 
     </script>

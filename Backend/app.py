@@ -207,12 +207,15 @@ def getResults() -> 'json':
         if pricingFilter != None:
             locations = filterByPrice(locations, pricingFilter)
         if ratingFilter != None and ratingFilter != '':
-            locations = filterByRating(locations, int(ratingFilter[0]))
+            try:
+                locations = filterByRating(locations, int(ratingFilter[0].strip()))
+            except:
+                pass
 
         # checks if the query is asking for a random one, if so it will get a random location
         if randomFilter != None:
             randomIndex = random.randint(0, len(locations))
-            return jsonify(locations[randomIndex])
+            return jsonify([locations[randomIndex]])
 
     except Exception as e: 
         print(e)
