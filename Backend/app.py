@@ -2,6 +2,7 @@ from flask import Flask, jsonify
 from flask_cors import CORS
 import requests
 import json
+import random
 
 UTC_RADIUS = 360
 CAMPUS_PLAZA_RADIUS = 220
@@ -128,6 +129,19 @@ def getResultsOutUCI(UTC: list[dict], Plaza: list[dict]) -> list[dict]:
 
     return OutSideUCI
 
+def getAllResults() -> list[dict]:
+    '''gets all the results from the Yelp API and returns it as a python dictionary'''
+
+    # sends a get request to yelp about food places around UCI within 10,000 meters
+    url = "https://api.yelp.com/v3/businesses/search?latitude=33.64602211664342&longitude=-117.84272864126669&term=food&radius=10000&sort_by=best_match&limit=20"
+
+    headers = {
+        "accept": "application/json",
+        "Authorization": "Bearer bB0ZapOxzLjsHScdSZc2iOD_8PjTuGXiLvEeB2UseuIZKBV4KRPGKZ6TgLchYZfzXxX219srxe_GLnq8eaOPpx5H1M9TmCODk7Cb6JuTZyWASGYrSIPz24oXBp1GZXYx"
+    }
+
+    return _parse(requests.get(url, headers=headers).json())
+
 
 def getResultsInUCI() -> list[dict]:
     '''this will open the local restaurants in the json and return a dictionary'''
@@ -139,31 +153,62 @@ def getResultsInUCI() -> list[dict]:
     return InUCI
 
 
+
+
+def getResultsOfClubs() -> list[dict]:
+    '''this will open the clubs in the json and return a dictionary'''
+
+    # loads the json file
+    with open('./clubs.json', 'r') as file:
+        clubs = json.load(file)
+
+    return clubs
+
+
 @app.route('/')
 def getResults() -> 'json':
     '''Recives a get request and queries the the yelp api to get information on '''
+    try:
+        # this will get the query paramters
+        locationFilter = requests.args.get('location').strip()
+        pricingFilter = requests.args.get('pricing').strip()
+        ratingFilter = requests.args.get('rating').strip()
+        random = requests.args.get('random').strip()
+    
 
-    # this will get the query paramters
-    locationFilter = requests.args.get('location').strip()
-    pricingFilter = requests.args.get('pricing').strip()
-    ratingFilter = requests.args.get('rating').strip()
+        # depending on the location sent, it will query the yelp API accordingly
+        if locationFilter == 'UTC':
+            locations = getResultsUTC()
+        elif locationFilter == 'Campus Plaza':
+            locations = getResultsPlaza()
+        elif locationFilter == 'On campus':
+            locations = getResultsOfClubs()
+            locations = locations + getResultsInUCI()
+        elif locationFilter == 'Nearby campus':
+            UTC = getResultsUTC()
+            Plaza = getResultsPlaza()
+            locations = getResultsOutUCI(UTC, Plaza)
+        else:
+            #this will account for no location, in which it will all the resturants nearby
+            locations = getResultsOfClubs()
+            locations = locations + getResultsInUCI()
+            locations = locations + getAllResults()
+            
 
-    # depending on the location sent, it will query the yelp API accordingly
-    if locationFilter == 'UTC':
-        locations = getResultsUTC()
-    elif locationFilter == 'Campus Plaza':
-        locations = getResultsPlaza()
-    elif locationFilter == 'On campus':
-        locations = getResultsInUCI()
-    elif locationFilter == 'Nearby campus':
-        UTC = getResultsUTC()
-        Plaza = getResultsPlaza()
-        locations = getResultsOutUCI(UTC, Plaza)
-
-    # checks if there is a filter in place and applies them
-    if pricingFilter != '':
-        locations = filterByPrice(locations, pricingFilter)
-    if ratingFilter != '':
-        locations = filterByRating(locations, int(ratingFilter[0]))
+        # checks if there is a filter in place and applies them
+        if pricingFilter != None:
+            locations = filterByPrice(locations, pricingFilter)
+        if ratingFilter != None:
+            locations = filterByRating(locations, int(ratingFilter[0]))
+        
+        #checks if the query is asking for a random one, if so it will get a random location
+        if random != None:
+            randomIndex = random.randint(0, len(locations))
+            return jsonify(locations[randomIndex])
+         
+    except:
+        #if the query from the front end is not formatted correctly or the yelp api fails then it will 
+        #just return an empty json
+        return jsonify([])
 
     return jsonify(locations)
