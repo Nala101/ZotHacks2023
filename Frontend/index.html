@@ -34,7 +34,7 @@
             </div>
             
             <div class="col-6 text-right">
-                <p id = "formInput" style="font-size:35px; font-family:'Raleway',sans-serif; color:#EFF2F1;">Input Form</p>
+                <p id = "formInput" style="font-size:25px; font-family:'Raleway',sans-serif; color:#EFF2F1;">Input Form</p>
             </div>
     
         </div>
@@ -45,7 +45,7 @@
             <div class="row">
                 <div class="col">
                     <div>
-                        <button type="button" class="btn btn-primary" style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem; border-radius: 10px; font-family: 'Raleway', sans-serif; background-color:#F4B942; font-size: 25px"> Surprise Me! </button>
+                        <button type="button" class="btn btn-primary" id="random" style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem; border-radius: 10px; font-family: 'Raleway', sans-serif; background-color:#F4B942; font-size: 25px"> Surprise Me! </button>
                     </div>
                 </div>
                 <div class="col">
@@ -53,7 +53,7 @@
                         <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" style="border-radius: 10px; font-family: 'Raleway', sans-serif; font-size: 25px">
                           Location
                         </button>
-                        <ul class="dropdown-menu" style="background:#70747c;">
+                        <ul class="dropdown-menu" id="location" style="background:#70747c;">
                           <li ><a class="dropdown-item" href="#" style="color:#EFF2F1"> On campus </a></li>
                           <li><a class="dropdown-item" href="#" style="color:#EFF2F1"> UTC </a></li>
                           <li><a class="dropdown-item" href="#" style="color:#EFF2F1"> Campus Plaza </a></li>
@@ -152,29 +152,23 @@
     <script>
         document.getElementById("formInput").addEventListener("click", function() {
             var link = "inputform.html";
-            window.open(link, '_blank');
+            window.location.href = link;
         });
     </script>
 
     <script>
-        document.getElementById("formAnthill").addEventListener("click", function() {
-            var link = "inputAnthill.html";
-            window.open(link, '_blank');
-        });
-    </script>
-
-    <script>
-
         var filters = {
             location: "",
             pricing: "",
-            rating: ""
+            rating: "",
+            random: false
         };
 
         $(document).ready(function () {
             $('#location a').on('click', function () {
                 var txt= ($(this).text());
                 filters["location"] = txt;
+                console.log(filters);
             });
         });
 
@@ -182,6 +176,7 @@
             $('#pricing a').on('click', function () {
                 var txt= ($(this).text());
                 filters["pricing"] = txt;
+                console.log(filters);
             });
         });
     
@@ -189,7 +184,13 @@
             $('#rating a').on('click', function () {
                 var txt= ($(this).text());
                 filters["rating"] = txt;
+                console.log(filters);
             });
+        });
+
+        document.getElementById("random").addEventListener("click", function() {
+            filters["random"] = true;
+            console.log(filters);
         });
 
         console.log(filters);
