@@ -19,7 +19,7 @@
             <img src="C:\Users\jason\Downloads\VS Project Folder\zothacks-2023\ZotHacks2023\Frontend\stuffed_petr.png" width = "100px" height = "100px" alt="Stuffed Petr">
         </div>
         <div class="col text-right">
-            <p style="font-size:35px; font-family:'Raleway',sans-serif; color:#EFF2F1;">Input Form</p>
+            <p id="form" style="font-size:35px; font-family:'Raleway',sans-serif; color:#EFF2F1;">Input Form</p>
         </div>
 
     </div>
@@ -33,11 +33,11 @@
             </div>
     
             <div class="row">
-                <h5 class="col-12 text-center mt-3" style="font-size: 30px; font-family: 'Raleway', sans-serif;  color:#EFF2F1;">Not sure where to eat at UCI?</h5>
+                <h5 class="col-12 text-center mt-1" style="font-size: 30px; font-family: 'Raleway', sans-serif;  color:#EFF2F1;">Not sure where to eat at UCI?</h5>
             </div>
     
             <div class="row justify-content-center">
-                <button type="button" id="anthill" class="btn btn-primary btn-lg mt-3" style="font-size: 30px; font-family: 'Lora', serif; background-color:#F4B942; border-radius:20px;">Find your anthill</button>
+                <button type="button" id="anthill" class="btn btn-primary btn-lg mt-5" style="font-size: 25px; font-family: 'Lora', serif; background-color:#F4B942; border-radius:20px;">Find your anthill</button>
             </div>
         </div>
     </div>
@@ -47,6 +47,13 @@
     
     <script>
         document.getElementById("anthill").addEventListener("click", function() {
+            var link = "index.html";
+            window.open(link, '_blank');
+        });
+    </script>
+
+    <script>
+        document.getElementById("form").addEventListener("click", function() {
             var link = "index.html";
             window.open(link, '_blank');
         });
