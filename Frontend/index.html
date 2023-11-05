@@ -170,7 +170,7 @@
 
         console.log(filters);
 
-        fetch("../Backend/app.py", {
+        fetch("http://localhost:5000/", {
             method: "POST",
             body: JSON.stringify(filters),
             headers: {
