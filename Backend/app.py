@@ -59,9 +59,20 @@ def getResultsOutUCI():
     }
     
     OutSideUCI = requests.get(url, headers=headers).json()
+        
+    for resturant in UTC['businesses']: 
+        deleteResturant(OutSideUCI['businesses'], resturant['name'])
     
+    for resturant in Plaza['businesses']:
+        del OutSideUCI['businesses'][resturant['name']]
+
 
     return jsonify(OutSideUCI.json())
+
+
+def deleteResturant(del_list, string):
+    for resturant in del_list:
+        
 
 
 @app.route('/InsideUCI')
@@ -77,3 +88,25 @@ def getResultsInUCI():
 
 
 
+
+    response = requests.get(url, headers=headers)
+    locations = _parse(response.json())
+
+    return jsonify(locations)
+
+def _parse(res: dict) -> list:
+    '''Returns a list that only has the needed attributes of the locations'''
+    copy_of_res = res.copy()
+
+    condensed = dict()
+    locations = []
+    needed_attributes = ['name', 'image_url', 'rating', 'price', 'location', 'display_phone', 'distance']
+    for location in copy_of_res['businesses']:
+        attributes_to_delete = []
+        for attribute in location:
+            if attribute not in needed_attributes:
+                attributes_to_delete.append(attribute)
+        for attribute in attributes_to_delete:
+            del location[attribute]
+        
+    return copy_of_res['businesses']
