@@ -213,7 +213,7 @@ def getResults() -> 'json':
                 pass
 
         # checks if the query is asking for a random one, if so it will get a random location
-        if randomFilter != None:
+        if randomFilter == True:
             randomIndex = random.randint(0, len(locations))
             return jsonify([locations[randomIndex]])
 
